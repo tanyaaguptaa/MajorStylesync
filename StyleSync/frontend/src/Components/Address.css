@@ -1,0 +1,183 @@
+.address-page {
+    background-color: #f8f9fa;
+  }
+  
+  .address-container {
+    max-width: 800px;
+    margin: 2rem auto; /* Add margin between header and address container */
+    padding: 30px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  
+  .address-container h2 {
+    color: #2c3e50;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    font-weight: 500;
+  }
+  
+  .address-container .address-item {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .address-container .address-item:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  }
+  
+  .address-container .address-item.selected {
+    border-color: #3498db;
+    box-shadow: 0 0 15px rgba(52,152,219,0.3);
+  }
+  
+  .address-container .address-details {
+    flex-grow: 1;
+    margin-left: 20px;
+  }
+  
+  .address-container .address-details p {
+    margin: 6px 0;
+    color: #34495e;
+    font-size: 14px;
+  }
+  
+  .address-container .address-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .address-container .edit-btn,
+  .address-container .delete-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .address-container .edit-btn {
+    color: #3498db;
+  }
+  
+  .address-container .delete-btn {
+    color: #e74c3c;
+    font-weight: bold;
+  }
+  
+  .address-container .edit-btn:hover,
+  .address-container .delete-btn:hover {
+    opacity: 0.7;
+  }
+  
+  .address-container .address-form {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  
+  .address-container .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .address-container .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-weight: 500;
+  }
+  
+  .address-container .form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .address-container .form-group input:focus {
+    outline: none;
+    border-color: #3498db;
+  }
+  
+  .address-container .add-address-btn,
+  .address-container .ship-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .address-container .add-address-btn:hover,
+  .address-container .ship-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+  }
+  
+  .address-container .ship-button {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .address-container .error {
+    color: #e74c3c;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .address-container input[type="radio"] {
+    margin-right: 15px;
+    transform: scale(1.2);
+  }
+  
+  @media (max-width: 600px) {
+    .address-container {
+      padding: 20px;
+    }
+  
+    .address-container .address-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .address-container .address-details {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  
+    .address-container .address-actions {
+      position: static;
+      margin-top: 10px;
+    }
+  
+    .address-container input[type="radio"] {
+      margin-bottom: 10px;
+    }
+  }
