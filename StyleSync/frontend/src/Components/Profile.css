@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+.profile-container {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+  margin: auto;
+  animation: fadeIn 0.5s ease-out;
+  z-index: 1003; /* Ensure it is above other elements */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-container h1 {
+  color: #8e44ad;
+  font-size: 22px;
+  margin-bottom: 5px;
+  text-align: center;
+  margin-top: -30px;
+}
+
+.profile-container p {
+  color: #2a2369;
+  font-size: 16px;
+  margin-bottom: 10px;
+  margin-top: -30px;
+  text-align: center;
+}
+
+.profile-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.profile-container li {
+  margin-bottom: 10px;
+}
+
+.profile-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-container button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(95, 167, 196, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+.profile-container button:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+.profile-container button:hover {
+  background-color: #66babe;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(159, 104, 104, 0.1);
+}
+
+.profile-container button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.profile-container li:last-child button {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.profile-container li:last-child button:hover {
+  background-color: #34d7a1;
+  color: blue;
+}
+
+@media (max-width: 480px) {
+  .profile-container {
+    padding: 20px;
+  }
+
+  .profile-container h1 {
+    font-size: 20px;
+  }
+
+  .profile-container p {
+    font-size: 14px;
+  }
+
+  .profile-container button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

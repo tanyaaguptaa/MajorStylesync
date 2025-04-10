@@ -1,0 +1,108 @@
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  .returns-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    animation: fadeIn 0.8s ease-out;
+  }
+  
+  .returns-title {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #2c3e50;
+  }
+  
+  .returns-subtitle {
+    text-align: center;
+    font-size: 1.2em;
+    color: #7f8c8d;
+    margin-bottom: 40px;
+  }
+  
+  .returns-process {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .return-step {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .return-step:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  .return-step.active {
+    background-color: #3498db;
+    color: white;
+    animation: pulse 1s infinite;
+  }
+  
+  .step-number {
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .active .step-number {
+    background-color: white;
+    color: #3498db;
+  }
+  
+  .step-content h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.2em;
+  }
+  
+  .step-content p {
+    margin: 0;
+    font-size: 0.9em;
+  }
+  
+  .start-return-btn {
+    display: block;
+    margin: 40px auto 0;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .start-return-btn:hover {
+    background-color: #27ae60;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }

@@ -1,0 +1,123 @@
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  .track-order-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    animation: fadeIn 0.8s ease-out;
+  }
+  
+  .track-order-title {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+  }
+  
+  .track-order-form {
+    display: flex;
+    margin-bottom: 30px;
+  }
+  
+  .track-order-form input {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #3498db;
+    border-radius: 5px 0 0 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .track-order-form input:focus {
+    outline: none;
+    border-color: #2980b9;
+  }
+  
+  .track-order-form button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .track-order-form button:hover {
+    background-color: #2980b9;
+  }
+  
+  .tracking-result {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    animation: fadeIn 0.8s ease-out;
+  }
+  
+  .tracking-result h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .tracking-timeline {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    position: relative;
+  }
+  
+  .tracking-timeline::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #bdc3c7;
+    z-index: 1;
+  }
+  
+  .timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .step-indicator {
+    width: 30px;
+    height: 30px;
+    background-color: #bdc3c7;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .timeline-step.completed .step-indicator {
+    background-color: #2ecc71;
+    animation: pulse 1s infinite;
+  }
+  
+  .timeline-step p {
+    text-align: center;
+    font-size: 0.8em;
+    color: #7f8c8d;
+  }
+  
+  .timeline-step.completed p {
+    color: #2c3e50;
+    font-weight: bold;
+  }
