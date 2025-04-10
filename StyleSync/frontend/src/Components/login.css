@@ -1,0 +1,121 @@
+.login-container {
+    max-width: 600px; /* Increased maximum width for the login container */
+    margin: 0 auto; /* Center the login container horizontally */
+    padding: 30px; /* Increased padding for more space */
+    background-image: linear-gradient(45deg, rgb(211, 235, 206), rgb(187, 191, 223));
+    border-radius: 15px; /* Slightly larger border-radius */
+    min-height: 520px; /* Increased minimum height */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* More pronounced shadow effect */
+  }
+  
+  .banner-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px; /* More space below the banner */
+    border-radius: 15px; /* Match the container's border-radius */
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  
+  .login-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px; /* Increased margin for more space */
+  }
+  
+  .toggle-button {
+    cursor: pointer;
+    padding: 15px 30px; /* Larger padding */
+    margin: 0 15px; /* Increased margin for more space */
+    border: none;
+    background-color: transparent;
+    color: #333;
+    font-size: 18px; /* Increased font size */
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .toggle-button:hover {
+    color: #666;
+  }
+  
+  .toggle-button.active {
+    color: #fff;
+    background-color: #333;
+  }
+  
+  .email-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .email-login input {
+    margin-bottom: 15px; /* Increased margin */
+    padding: 15px; /* Larger padding */
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 15px; /* Larger border-radius */
+    font-size: 16px; /* Increased font size */
+  }
+  
+  .email-login button {
+    padding: 15px 30px; /* Larger padding */
+    border: none;
+    background-color: #7d3528;
+    color: #fff;
+    font-size: 18px; /* Increased font size */
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+    width: 200px; /* Increased button width */
+  }
+  
+  .email-login button:hover {
+    background-color: #6a4444;
+    transform: scale(1.05); /* Slightly increased scaling */
+  }
+  
+  .error {
+    color: red;
+    margin-top: 10px; /* Increased margin-top */
+    margin-bottom: 0;
+    font-size: 14px; /* Slightly larger error font size */
+  }
+  
+  .forgot-password {
+    margin-top: 20px; /* Increased margin-top */
+    text-align: center;
+    width: 100%; /* Ensure it spans the container width */
+  }
+  
+  .forgot-password input {
+    margin-top: 15px; /* Increased margin-top */
+    padding: 15px; /* Larger padding */
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 15px; /* Larger border-radius */
+    font-size: 16px; /* Increased font size */
+  }
+  
+  .forgot-password button {
+    margin-top: 15px; /* Increased margin-top */
+    padding: 15px 30px; /* Larger padding */
+    border: none;
+    background-color: #7d3528;
+    color: #fff;
+    font-size: 18px; /* Increased font size */
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .forgot-password button:hover {
+    background-color: #6a4444;
+    transform: scale(1.05); /* Slightly increased scaling */
+  }
+  
