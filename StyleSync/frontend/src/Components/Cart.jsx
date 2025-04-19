@@ -1,3 +1,4 @@
+// Cart.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
@@ -5,7 +6,6 @@ import './Cart.css';
 import Footer from './Footer';
 import Header from './Header';
 import CouponCode from './CouponCode';
-import Loader from './Loader';
 const config = require('../Config/Constant');
 
 const Cart = () => {
@@ -98,7 +98,7 @@ const Cart = () => {
     setCouponDiscount(discount);
   };
 
-  if (loading) return <Loader />;
+  if (loading) return <div className="loading">Loading...</div>;
   if (error) return <div className="error">{error}</div>;
 
   const subtotal = cart ? cart.items?.reduce((acc, item) => acc + item.product.price * item.quantity, 0) : 0;
@@ -149,7 +149,7 @@ const Cart = () => {
             <div className="cart-total">
               <h3>MRP: ₹{subtotal.toFixed(2)}</h3>
               {couponDiscount > 0 && <h3>Coupon Discount: -₹{(subtotal * couponDiscount).toFixed(2)}</h3>}
-              <h3 id="total-amount">Total Amount: ₹{total.toFixed(2)}</h3>
+              <h3 id= "total-amount">Total Amount: ₹{total.toFixed(2)}</h3>
             </div>
             <Link to="/Address" className="proceed-button">
               Proceed to Checkout
