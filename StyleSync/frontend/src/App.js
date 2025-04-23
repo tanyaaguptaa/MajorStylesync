@@ -6,6 +6,7 @@ import Cart from './Components/Cart';
 import Home from './Components/Home';
 import Login from './Components/login'; // Ensure you have a Login component
 import Admin from './Components/Admin';
+import SkinToneRecommendation from './Components/SkinToneRecommendation';
 import './App.css';
 import Checkout from './Components/Checkout';
 import Address from './Components/Address';
@@ -54,6 +55,7 @@ const App = () => {
           <Route path='/terms' element={<TermsOfUse/>}/>
           <Route path='/coupons' element={<CouponCode/>}/>
           <Route path="/search-results" element={<SearchResults />} />
+          <Route path="/skintone" element={<SkinToneRecommendation />} />
         </Routes>
         </AlertProvider>
     </Router>
