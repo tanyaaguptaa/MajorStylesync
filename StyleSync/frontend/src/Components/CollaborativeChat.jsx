@@ -434,16 +434,115 @@
 
 // export default CollaborativeChat;
 
+// best one
+// import React, { useEffect, useState } from "react";
+// import io from "socket.io-client";
+// import "./CollaborativeChat.css";
+
+// let socket;
+
+// const CollaborativeChat = ({ room }) => {
+//   const [username, setUsername] = useState("Guest" + Math.floor(Math.random() * 1000));
+//   const [message, setMessage] = useState("");
+//   const [messages, setMessages] = useState([]);
+//   const [connected, setConnected] = useState(false);
+//   const [image, setImage] = useState(null);
+
+//   useEffect(() => {
+//     socket = io("http://localhost:5000"); // 👈 Use your backend URL
+//     socket.emit("joinRoom", room);
+
+//     socket.on("connect", () => setConnected(true));
+//     socket.on("disconnect", () => setConnected(false));
+
+//     socket.on("message", (msg) => {
+//       setMessages((prev) => [...prev, msg]);
+//     });
+
+//     return () => {
+//       socket.disconnect();
+//     };
+//   }, [room]);
+
+//   const sendMessage = () => {
+//     if (message.trim()) {
+//       socket.emit("message", { room, text: message, username });
+//       setMessage("");
+//     }
+//   };
+
+//   const sendImage = () => {
+//     const reader = new FileReader();
+//     reader.onload = () => {
+//       socket.emit("image", { room, image: reader.result, username });
+//       setImage(null);
+//     };
+//     reader.readAsDataURL(image);
+//   };
+
+//   return (
+//     <div className="chat-container">
+//       <div className="chat-header">
+//         <span>Room: {room}</span>
+//         <span className={`status-indicator ${connected ? "connected" : "disconnected"}`}>
+//           {connected ? "Connected" : "Disconnected"}
+//         </span>
+//       </div>
+
+//       <div className="messages-container">
+//         {messages.map((msg, index) => (
+//           <div key={index} className={`message ${msg.username === username ? "own-message" : "other-message"}`}>
+//             <div className="message-sender">{msg.username}</div>
+//             {msg.image ? (
+//               <img src={msg.image} alt="shared" className="shared-image" />
+//             ) : (
+//               <div>{msg.text}</div>
+//             )}
+//           </div>
+//         ))}
+//       </div>
+
+//       <div className="chat-input-container">
+//         <input
+//           className="chat-input"
+//           placeholder="Type a message..."
+//           value={message}
+//           onChange={(e) => setMessage(e.target.value)}
+//           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+//         />
+//         <button className="send-btn" onClick={sendMessage}>Send</button>
+//         <label className="image-upload-btn">
+//           +
+//           <input
+//             type="file"
+//             accept="image/*"
+//             style={{ display: "none" }}
+//             onChange={(e) => setImage(e.target.files[0])}
+//           />
+//         </label>
+//       </div>
+
+//       {image && (
+//         <div className="image-preview-container">
+//           <img src={URL.createObjectURL(image)} className="image-preview" />
+//           <div className="image-preview-actions">
+//             <button className="send-image-btn" onClick={sendImage}>Send Image</button>
+//             <button className="cancel-image-btn" onClick={() => setImage(null)}>Cancel</button>
+//           </div>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default CollaborativeChat;
 import React, { useEffect, useState } from "react";
 import io from "socket.io-client";
 import "./CollaborativeChat.css";
 
 let socket;
 
-const CollaborativeChat = ({ room }) => {
-  const [username, setUsername] = useState(
-    "Guest" + Math.floor(Math.random() * 1000)
-  );
+const CollaborativeChat = ({ room, username }) => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [connected, setConnected] = useState(false);
