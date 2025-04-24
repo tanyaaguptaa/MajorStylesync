@@ -624,3 +624,160 @@
       text-align: center;
     }
   }
+  
+  /* Styles for Size Input Section */
+.size-input-section {
+  border: 1px solid #eee;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.size-input-section h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #555;
+  text-align: center;
+}
+
+.size-choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.size-choice p {
+    margin-bottom: 5px;
+}
+
+.size-option-btn,
+.back-to-choice-btn,
+.submit-sizes-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 1em;
+}
+
+.size-option-btn:hover,
+.back-to-choice-btn:hover,
+.submit-sizes-btn:hover {
+  background-color: #0056b3;
+}
+
+.back-to-choice-btn {
+    background-color: #6c757d;
+    margin-top: 10px; /* Add some space above the back button */
+}
+.back-to-choice-btn:hover {
+    background-color: #5a6268;
+}
+
+
+.standard-size-select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.standard-size-select label {
+    margin-bottom: 0; /* Override default label margin if any */
+}
+
+.standard-size-select select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 100px; /* Adjust as needed */
+}
+
+/* Styles for Measurement Forms inside the section */
+.size-form {
+  margin-top: 15px;
+  padding: 15px;
+  border: 1px dashed #ccc; /* Optional: visually separate the form */
+  background-color: #fff;
+}
+
+.size-form h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 15px;
+  align-items: end; /* Align items to the bottom */
+}
+
+.form-grid label {
+  display: flex;
+  flex-direction: column; /* Stack label text above input */
+  font-weight: bold;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.form-grid input[type="number"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 4px; /* Space between label text and input */
+  width: 100%; /* Make inputs take full width of grid cell */
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+.form-grid .submit-sizes-btn {
+    grid-column: 1 / -1; /* Make button span all columns */
+    justify-self: center; /* Center the button */
+    margin-top: 10px; /* Add some space above the button */
+    width: fit-content; /* Adjust button width */
+}
+
+/* Styling for cart items needing size */
+.cart-item.needs-size {
+  border-left: 5px solid #ffc107; /* Highlight items needing size */
+  /* opacity: 0.7; */ /* Optional: dim items needing size */
+}
+
+.item-size.size-missing {
+  color: #dc3545; /* Red color for missing size text */
+  font-weight: bold;
+}
+.size-missing-message{
+    font-size: 0.85em;
+    color: #dc3545;
+    margin-top: 5px;
+}
+
+/* Disable checkout button */
+.checkout-button.disabled-link {
+  background-color: #ccc;
+  cursor: not-allowed;
+  pointer-events: none; /* Important to truly disable link clicks */
+  opacity: 0.6;
+}
+
+.size-required-warning {
+    color: #dc3545;
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.info-message {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    color: #495057;
+}
